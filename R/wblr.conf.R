@@ -221,7 +221,7 @@ DQ<-DescriptiveQuantiles
 	if(substr(tolower(fit$options$method.fit),1,2)!= "rr") {
 		stop("pivotal bounds are only applied on rank regression fits")
 	}
-	
+
 		if(!is.integer(opaconf$seed))  {
 			##warning(paste0("opaconf$seed: ",opaconf$seed,"is not an integer"))
 			opaconf$seed<-1234
@@ -329,7 +329,7 @@ DQ<-DescriptiveQuantiles
 							exp(ret*fit$sdlog + fit$meanlog))
 					}
 
-					names(fit$conf[[i]]$bounds) <- c("unrel","Lower","Datum", "Upper")
+					names(fit$conf[[i]]$bounds) <- c("unrel","Lower","Datum", "Upper", "RAI")
 					op <- unique(c(names(opafit),names(opaconf)))
 						# this is needed to add options from opafit into li that
 						# are NULL in opafit
